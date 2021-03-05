@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block link %}
+    <link href="{{ url_for('static', filename='css/style-login.css') }}" rel="stylesheet"/>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+{% endblock link %}
+
+
+{% block content %}
+
+    <div class="container-1">
+        <div class="frame">
+            <div class="nav">
+                <ul class="links">
+                    <li class="signin-active"><a>Login</a></li>
+                </ul>
+            </div>
+            <div ng-app ng-init="checked = false">
+                <form class="form-signin" action="" method="post" name="form">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.email.label(class='form-styling-label') }}
+                        {% if form.email.errors %}
+                            {{ form.email(class='form-styling form-styling-lg is-invalid') }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.email(class='form-styling form-styling-lg') }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label(class='form-styling-label') }}
+                        {% if form.password.errors %}
+                            {{ form.password(class='form-styling form-styling-lg is-invalid') }}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.password(class='form-styling form-styling-lg') }}
+                        {% endif %}
+                    </div>
+                    <div class="ui">
+                        {{ form.remember(class="form-check-input") }}
+                        {{ form.remember.label(class="form-check-label") }}
+                    </div>
+                    <div class="btn-animate">{{ form.submit(class='btn btn-signin') }}</div>
+                </form>
+            </div>
+            <div class="forgot-pass"><a href="{{ url_for('reset_request') }}"><span
+                    style="text-decoration: underline; color: #6c757d">Forgot Password ?</span></a></div>
+        </div>
+    </div>
+
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+{% endblock content %}

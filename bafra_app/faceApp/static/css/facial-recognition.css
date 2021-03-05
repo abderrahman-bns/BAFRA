@@ -1,0 +1,17 @@
+body {
+    background: -webkit-linear-gradient(left, #1abc9c, #17a2b8);
+}
+
+.style{
+    margin: 120px 50px 100px;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+.img-suv{
+    height: 500px;
+    width: 800px;
+}

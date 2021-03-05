@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+    <link href="{{ url_for('static', filename='css/style-about.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+        <div class="container"><a href="#" class="navbar-brand d-flex align-items-center"> <i
+                class="fa fa-snowflake-o fa-lg text-primary mr-2"></i><strong>Snowflake</strong></a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="#" class="nav-link font-italic">  </a></li>
+                    <li class="nav-item active"><a href="#" class="nav-link font-italic">  </a></li>
+                    <li class="nav-item active"><a href="#" class="nav-link font-italic">  </a></li>
+                    <li class="nav-item active"><a href="#" class="nav-link font-italic"> </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-light">
+        <div class="container py-5">
+            <div class="row h-100 align-items-center py-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4">About B A F R A</h1>
+                    <br><br>
+                    <p class="lead text-muted mb-0">The image of a face in a passport is the only data to use for
+                        personal authentication worldwide, regardless of nationality. In
+                        addition, image recognition on the face offers a unique advantage over
+                        other personal authentication technologies because it can authenticate
+                        people at a distance. B A F R A Application presents facial recognition technology in
+                        real time to use in a point system.</p>
+
+                </div>
+                <div class="col-lg-6 d-none d-lg-block"><img
+                        src="{{ url_for('static', filename='img/computer.png') }}" alt=""
+                        class="img-fluid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-5">
+        <div class="container py-5">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <h2 class="font-weight-light">The creation of B A F R A</h2>
+                    <p class="font-italic text-muted mb-4">The choice of programming language fell on Python. For the
+                        realization of our project. This application was created thanks to very professional
+                        modules, facial recognition which uses cnn technology (convolutional neural network) with GPU
+                        support to give us a very good result.</p>
+
+                    <a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+                </div>
+                <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img
+                        src="{{ url_for('static', filename='img/face-recognition.png') }}" alt=""
+                        class="img-fluid mb-4 mb-lg-0"></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 mx-auto"><img
+                        src="{{ url_for('static', filename='img/programmer.png') }}" alt=""
+                        class="img-fluid mb-4 mb-lg-0"></div>
+                <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+                    <h2 class="font-weight-light">The library uses</h2>
+                    <p class="font-italic text-muted mb-4">For the realization of our project, several libraries were
+                        forced to use it: OpenCV, Dlib and face_recognition. Dlib is a library that can be used for free
+                        in multiple applications. It contains machine learning algorithms and tools that help us create
+                        complex software to solve real world problems.
+                        OpenCV (for Open Computer Vision) is a free, open source graphics library, originally developed
+                        by Intel, specializing in real-time image processing.
+                        The library, created by Adam Geitgey, wraps around the facial recognition feature of dlib,
+                        making it easier to work with.</p>
+                    <a href="#" class="btn btn-light px-5 rounded-pill shadow-sm">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light py-5">
+        <div class="container py-5">
+            <div class="row mb-4">
+                <div class="col-lg-5">
+                    <h2 class="display-4 font-weight-light">Our team</h2>
+                    <p class="font-italic text-muted">The B A F R A project was created and developed thanks to the developers and programmers, who did a very good job.</p>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <!-- Team item-->
+
+                <!-- End-->
+
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556834130/avatar-3_hzlize.png" alt=""
+                            width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Hatim Allouane</h5><span
+                                class="small text-uppercase text-muted">CEO - Founder</span>
+
+                    </div>
+                </div>
+                <!-- End-->
+
+
+
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="https://res.cloudinary.com/mhmd/image/upload/v1556834133/avatar-1_s02nlg.png" alt=""
+                            width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Abderahman Bensalah</h5><span
+                                class="small text-uppercase text-muted">CEO - Founder</span>
+
+                    </div>
+                </div>
+                <!-- End-->
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js') }}"></script>
+{% endblock %}

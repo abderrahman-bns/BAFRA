@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block link %}
+
+    <link href="{{ url_for('static', filename='css/style-contact.css') }}" rel="stylesheet"/>
+
+{% endblock link %}
+
+
+{% block content %}
+
+    <header>
+        <h1>Contact us</h1>
+    </header>
+
+    <div id="form">
+
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        {% if success %}
+            <p>Thank you for your message. We'll get back to you shortly.</p>
+
+        {% else %}
+            <form id="waterform" method="post" action="{{ url_for('contact') }}">
+                {{ form.hidden_tag() }}
+
+                <div class="formgroup" id="name-form">
+                    <label for="name">Your name*</label>
+                    {% if form.name.errors %}
+                        {{ form.name(class='form-styling form-styling-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.name(class='form-styling form-styling-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="formgroup" id="email-form">
+                    <label for="email">Your e-mail*</label>
+                    {% if form.email.errors %}
+                        {{ form.email(class='form-styling form-styling-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class='form-styling form-styling-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="formgroup" id="subject-form">
+                    <label for="email">Your Subject*</label>
+                    {% if form.subject.errors %}
+                        {{ form.subject(class='form-styling form-styling-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.subject.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.subject(class='form-styling form-styling-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="formgroup" id="message-form">
+                    <label for="message">Your message</label>
+                    {% if form.message.errors %}
+                        {{ form.message(class='form-styling form-styling-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.message.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.message(class='form-styling form-styling-lg') }}
+                    {% endif %}
+                </div>
+                {{ form.submit(class="profile-edit-btn") }}
+            </form>
+        {% endif %}
+    </div>
+
+{% endblock content %}

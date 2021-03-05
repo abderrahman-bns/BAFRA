@@ -1,0 +1,255 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/facial-recognition.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block content %}
+    <div class="style">
+        <div class="row">
+
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal1"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal2"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal3"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal4"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal5"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+            <div class="col-4" data-toggle="modal" data-target="#portfolioModal6"><img src="{{ url_for('face_recognition') }}" class="responsive"></div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal1Label">Camera 01</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img id='img-01' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal2Label">Camera 02</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                               <img id='img-02' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                <!-- Portfolio Modal - Text-->
+                                 <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal3Label">Camera 03</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                              <img id='img-03' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                 <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal4Label">Camera 04</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                               <img id='img-04' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                 <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal5Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal5Label">Camera 05</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                               <img id='img-05' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                 <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal6Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal6Label">Camera 06</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img id='img-06' src="{{ url_for('face_recognition') }}" class="img-suv">
+                                <!-- Portfolio Modal - Text-->
+                                <br>
+                                <br>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+{% endblock %}

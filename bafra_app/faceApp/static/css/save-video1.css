@@ -1,0 +1,26 @@
+body{
+    background: -webkit-linear-gradient(left, #1abc9c, #17a2b8);
+}
+button {
+  width: 130px;
+}
+
+.frame-position{
+  margin-top: 100px;
+}
+
+.d-flex#video{
+  margin-top: 150px;
+}
+
+video{
+  height: 400px;
+  width: 700px;
+  background: #2c3e50;
+}
+
+canvas{
+  height: 400px;
+  width: 700px;
+  background: #2c3e50;
+}

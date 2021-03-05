@@ -1,0 +1,258 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/account.css') }}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="container emp-profile">
+        <form method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="media" style="margin-left: 50px">
+                        <img class="rounded account-img" src="{{ image_file }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                            {{ form.nom.data }} {{ form.prenom.data }}
+                        </h5>
+                        <h6>
+                            {{ form.fonction.data }}
+                        </h6>
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                   aria-controls="home" aria-selected="true">INFO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    {{ form.submit(class="profile-edit-btn") }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3" style="margin-top: 60px;">
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.profile == 'Admin' %}
+                           <a class="btn btn-primary" href="{{url_for('createdDB')}}" role="button">Create DB</a>
+                            <br>
+                            <br>
+                            <a class="btn btn-primary" href="{{url_for('createEN')}}" role="button">Create Encoding File</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>{{ form.username.label(class="form-control-label") }}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    {% if form.username.errors %}
+                                        {{ form.username(class="form-control  is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.username.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.username(class="form-control ") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label><label>{{ form.nom.label(class="form-control-label") }}</label></label>
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.nom(class="form-control ", readonly=true, placeholder=form.nom.data) }}
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>{{ form.prenom.label(class="form-control-label") }}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.prenom(class="form-control ", readonly=true, placeholder=form.prenom.data) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.email.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+
+                                    {% if form.email.errors %}
+                                        {{ form.email(class="form-control  is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.email.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.email(class="form-control ") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.tel.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    {% if form.tel.errors %}
+                                        {{ form.tel(class="form-control  is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.tel.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.tel(class="form-control ") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.sex.label(class="form-control-label") }}
+                                    (M : for male/F : for femelle)
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        {{ form.sex(class="form-control ", readonly=true, placeholder=form.sex.data) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.age.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    {% if form.age.errors %}
+                                        {{ form.age(class="form-control  is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.age.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.age(class="form-control ") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.profile.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        {{ form.profile(class="form-control ", readonly=true, placeholder=form.sex.data) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.fonction.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.fonction(class="form-control ", readonly=true, placeholder=form.fonction.data) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.departement.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.departement(class="form-control ", readonly=true, placeholder=form.departement.data) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.video_file.label(class="form-control-label") }}
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        {{ form.video_file(class="form-control ", readonly=true, placeholder=form.video_file.data) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.picture.label() }}
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.picture(class="form-control-file") }}
+                                    {% if form.picture.errors %}
+                                        {% for error in form.picture.errors %}
+                                            <span class="text-danger">{{ error }}</span></br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Experience</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Hourly Rate</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>10$/hr</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Total Projects</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>230</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>English Level</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Expert</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Availability</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>6 months</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Bio</label><br/>
+                                    <p>Your detail description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

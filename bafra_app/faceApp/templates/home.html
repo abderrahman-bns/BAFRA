@@ -1,0 +1,274 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="{{ url_for('static', filename='img/avataaars.svg') }}" alt=""/>
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">Welcome to B A F R A</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Detection - Analyse - Recognition</p>
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">How to use this App </h2>
+            <br>
+            <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0"> Explanation in steps from 1
+                to 4 </h5>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row">
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/portfolio/one.png') }}" alt=""/>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/portfolio/two.png') }}" alt=""/>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/portfolio/three.png') }}"
+                             alt=""/>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4-->
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i
+                                    class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{{ url_for('static', filename='img/portfolio/four.png') }}" alt=""/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        Tangier - Morocco
+                        <br/>
+                        90010
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">contact support</h4>
+                    <p class="lead mb-0">if you need help, or have any questions, please contact support via this <a
+                            href="{{ url_for('contact') }}">link</a></p>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About B A F R A</h4>
+                    <p class="lead mb-0">
+                        B A F R A is a facial recognition web application</p>
+                    <a href="{{ url_for('about') }}">Everything about B A F R A</a>
+                    .
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- How To Use This App-->
+    <!-- Portfolio Modal 1-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal1Label">Receive your username and password</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                     src="{{ url_for('static', filename='img/portfolio/mail.png') }}" alt=""/>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-5">Step 1: You must receive a username and password, to be able to connect
+                                    to the application, if you already have your username and password you can go to
+                                    <a href="{{ url_for('login') }}">step 2</a>. If not contact the
+                                    <a href="{{ url_for('contact') }}">support</a> or the administrator to receive your
+                                    identifiers</p>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal2Label">Login</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                     src="{{ url_for('static', filename='img/portfolio/Login.png') }}" alt=""/>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-5">Step 2: After having received your username and password, you must
+                                    connect to the application via the login button or this
+                                    <a href="{{ url_for('login') }}">link</a>, and enter your username and password</p>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal3Label">Reset your password</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                     src="{{ url_for('static', filename='img/portfolio/reset.png') }}" alt=""/>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-5">Step 3: After logging into your account, you must change your password,
+                                    by clicking on account -> update or via this
+                                    <a href="{{ url_for('login') }}">link</a></p>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
+         aria-labelledby="portfolioModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0"
+                                    id="portfolioModal4Label">Save a video</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded mb-5"
+                                     src="{{ url_for('static', filename='img/portfolio/meeting.png') }}" alt=""/>
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-5">
+                                    Step 4: After changing your password, you must take a live video and record it on
+                                    the application, the video must be very well taken and must be of one minute
+                                    duration.</p>
+                                <button class="btn btn-primary" data-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

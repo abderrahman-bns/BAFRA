@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bounding-box.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% endblock %}
+
+{% block content %}
+    <div class="style">
+        <div class="d-flex flex-row">
+            <div class="fg-1">
+                <div class="p-2">
+                    <img src="{{ url_for('video_feed') }}">
+                </div>
+            </div>
+            <div class="fg-2">
+                <div class="p-2">
+                    <h3 style="color:#2c3e50;">In this part, you can test one of our face detection techniques, by drawing a rectangle on your face
+                        with a detection percentage. Face detection with OpenCV and deep learning, You can perform fast, accurate face detection with OpenCV using a pre-trained deep learning
+                        face detector model shipped with the library. The more accurate OpenCV face detector is deep learning based, and in particular, utilizes the Single Shot Detector (SSD)
+                        framework with ResNet as the base network.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+{% endblock %}

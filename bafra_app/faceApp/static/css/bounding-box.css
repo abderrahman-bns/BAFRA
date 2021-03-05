@@ -1,0 +1,16 @@
+body {
+    background: -webkit-linear-gradient(left, #1abc9c, #17a2b8);
+}
+
+.style {
+    margin-top: 200px;
+}
+
+img {
+    height: 400px;
+    width: 700px;
+    background: #2c3e50;
+}
+
+
+
